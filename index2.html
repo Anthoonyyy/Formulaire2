@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Check Age</title>
+    <title>Formulaire 2</title>
 </head>
+
 <body>
-    <div id="ageForm">
-        <h2>Entrez votre âge :</h2>
-        <form id="formInput">
-            <input type="number" id="ageInput" placeholder="Votre âge" required>
-            <button id="agebouton"type="button" onclick="checkAge()">Vérifier l'âge</button>
-        </form>
-        <div id="result"></div>
-        <script src="script.js"></script>
+
+    <form action="" id="formContainer">
+
+        <div id="lePrenom">
+            <label for="prenom">Prénom:</label>
+            <input type="text" name="prenom" id="prenom">
+        </div>
+        <div id="leNom">
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom" id="nom">
+        </div>
+        <div id="leMdp">
+            <label for="mdp">Mot de passe:</label>
+            <input type="password" name="mdp" id="mdp" oninput="checkPassword()" required>
+            <button id="Show" onclick="ShowHide()">Show</button>
+        </div>
+
+        <div id="resultat"></div>
+        <div id="bouton">
+            <input type="submit" value="Envoyez" onclick="submitForm()">
+        </div>
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
+    </form>
+
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
