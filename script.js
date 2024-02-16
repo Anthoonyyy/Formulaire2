@@ -27,9 +27,17 @@ var prénom = document.getElementById("prenom").value;
 function submitForm() {
     var resultDiv = document.getElementById('resultat');
     var password = document.getElementById('mdp').value;
+    var nom = document.getElementById("nom").value;
     var prenom = document.getElementById("prenom").value;
     var messageAlerte = "Bienvenue  " + prenom;
-    if (password.length >= 10 && /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*(),.?":{}|<>'-+/]/.test(password)) {
+    if(prenom.length > 5 || nom.length > 5){
+        resultDiv.textContent = "Nom ou prénom trop long";
+        resultDiv.style.color = "blue";
+        resultDiv.style.textAlign = "center";
+        resultDiv.style.marginTop = "20px";
+        return;
+    }
+    if (password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*(),.?":{}|<>'-+/]/.test(password)) {
         resultDiv.textContent = "Inscription réussie !";
         resultDiv.style.color = "green";
         resultDiv.style.textAlign = "center";
